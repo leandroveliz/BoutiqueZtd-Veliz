@@ -36,3 +36,17 @@
     transform: rotate(360deg);
   }
 }
+
+.tamanioCarrito{
+  width: 70px;
+  height: 70px;  
+}
+
+
+footer{
+  background-color: #808080;
+}
+
+body{
+  background-color: aquamarine;
+}
