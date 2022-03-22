@@ -47,6 +47,18 @@ footer{
   background-color: #808080;
 }
 
-body{
-  background-color: aquamarine;
+.color-body{
+  background-color: #ffdb7f;
+}
+
+.tamanioProducto{
+  border-top: ridge rgb(228, 203, 171) ;
+  border-right: ridge rgb(245, 222, 192) ;
+  border-left: ridge rgb(245, 222, 192) ;
+  border-bottom: ridge rgb(245, 222, 192) ;
+  height: 300px;
+    width:330px;
+    margin: 60px;
+    text-align: center;
+  background-color: burlywood;
 }

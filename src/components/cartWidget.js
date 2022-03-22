@@ -4,7 +4,7 @@ import '../App.css'
 
 const CartWidget = ({}) =>{
     return(
-    <img src={carrito} className="tamanioCarrito" alt="carrito" />
+    <img src={carrito} className="tamanioCarrito" alt="carrito"/>
     );
 }
   
