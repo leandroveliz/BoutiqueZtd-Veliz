@@ -1,21 +1,40 @@
 import React, {useState} from "react";
-import ItemCount from './itemCount';
 
 
-
-const producto = {
-    nombre: 'Remera Lisa',
-    stock: '5',
-    inicial:'1'
-};
-const Funcional = ({nombre,apellido}) => {
-   
-        return(
-            <div class="tamanioProducto">
-            <h2>{producto.nombre}</h2>
-            <ItemCount nombre={producto.nombre}stock={producto.stock} inicial={producto.inicial}/>
-            <h5>Stock disponible: {producto.stock}</h5>
+const Funcional = ({stock,initial,onAdd}) => {
+        const [contador,setContador] = useState(initial);
+        
+        const clickSuma = () => {
+            if(contador === stock){
+                return;
+            }
             
+                setContador(contador+1)
+            
+        };
+        
+        const clickResta = () => {
+            if(contador === initial){
+                return;
+            }
+            setContador(contador-1)
+            
+        };
+        const sumarAlCarrito= () =>{
+            onAdd(contador);
+        }
+        return(
+            <div className="tamanioProducto">
+                <h2>Producto</h2>
+                <div>
+                <button onClick={()=> clickResta()}>-</button>
+                <h3>{contador}</h3>
+                <button onClick={()=> clickSuma()}>+</button>
+                </div>
+                <div>
+                <button onClick={()=> sumarAlCarrito()} className="btn btn-primary">Agregar al Carrito</button>
+                </div>
+                
             </div>
         )
 

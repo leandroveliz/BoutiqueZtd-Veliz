@@ -10,10 +10,12 @@ const personaClass = {
   nombre: 'Leandro',
   apellido: 'Veliz'
 }
-const personaFuncional = {
-  nombre: 'Leandro',
-  apellido: 'Veliz'
-}
+const stock=10;
+const initial=1;
+const onAdd = (contador) => {
+    console.log('Cantidad Agregada',contador)
+};
+
 
 function App() {
   return (
@@ -26,7 +28,7 @@ function App() {
       <ClassComponent nombre={personaClass.nombre} apellido={personaClass.apellido}/>
       </div>
       <div>
-      <Funcional nombre={personaFuncional.nombre} apellido={personaFuncional.apellido}/>
+      <Funcional stock={stock} initial={initial} onAdd={onAdd}/>
       </div>
       
       </body>
