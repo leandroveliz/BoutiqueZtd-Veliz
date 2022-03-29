@@ -37,28 +37,41 @@
   }
 }
 
+footer{
+  background-color: rgb(245, 222, 192);
+}
+.colorA{
+  color: black;
+}
 .tamanioCarrito{
   width: 50px;
   height: 50px;  
 }
 
-
-footer{
-  background-color: #808080;
+.imagenLogo{
+  width: 100px;
+  height: 80px; 
 }
 
 .color-body{
+  background-color: white;
+}
+
+.colorHeader{
   background-color: rgb(228, 203, 171);
 }
 
-.tamanioProducto{
-  border-top: ridge rgb(245, 222, 192) ;
-  border-right: ridge rgb(245, 222, 192) ;
-  border-left: ridge rgb(245, 222, 192) ;
-  border-bottom: ridge rgb(245, 222, 192) ;
-  height: 240px;
-    width:270px;
-    margin: 60px;
-    text-align: center;
+.colorCard{
   background-color: burlywood;
+}
+
+.moverProducto{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.tamanioImagen{
+  width: 150px;
+  height: 150px;
 }
