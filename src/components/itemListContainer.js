@@ -1,13 +1,24 @@
-import React from "react";
+import { computeStyles } from '@popperjs/core';
+import React,{useEffect,useState}from 'react';
 import ItemList from "./itemList";
+import { promesa } from '../mocks/api';
 
 
-const Funcional = () => {
-        
+const ItemListContainer = () => {
+    const [listaProductos,setListaProductos] = useState([]);
+    const [cargando,setCargando] = useState(false);
+
+    useEffect(()=>{
+        setCargando(true)
+        promesa.then((resp)=> setListaProductos(resp))
+        .catch((error) => console.log(error))
+        .finally(()=> setCargando(false))
+    },[]);        
         return(
             <div>
-                
-                <ItemList />
+                {cargando  ? <p>Cargando...</p> : ''}
+                <h3>Lista de Productos</h3> 
+                <ItemList listaProductos={listaProductos}/>
                 
             </div>
             
@@ -16,4 +27,4 @@ const Funcional = () => {
 }
 
 
-export default Funcional;
+export default ItemListContainer;

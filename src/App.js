@@ -1,8 +1,10 @@
 import React from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import Navbar from './components/navbar';
-import Funcional from './components/itemListContainer'
+import ItemListContainer from './components/itemListContainer'
+import ItemDetailContainer from './components/itemDetailContainer';
 
 function App() {
   return (
@@ -13,7 +15,9 @@ function App() {
       <body class="color-body">
 
       <div>
-      <Funcional />
+      <ItemListContainer />
+      <ItemDetailContainer />
+
       </div>
       
       </body>

@@ -30,9 +30,9 @@ const Item = ({nombre,precio, stock}) =>{
         
     return(
             <div>
-               
+
                 <Card style={{ width: '16rem', margin: '12px' }}>
-                    <Card.Body className="colorCard">
+                    <Card.Body class="colorCard">
                         <Card.Title>{nombre}</Card.Title>
                         <Card.Text>
                             Precio: ${precio}
