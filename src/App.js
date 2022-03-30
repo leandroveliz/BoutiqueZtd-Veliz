@@ -12,15 +12,10 @@ function App() {
       <header >
         <Navbar />
       </header>
-      <body class="color-body">
-
       <div>
       <ItemListContainer />
       <ItemDetailContainer />
-
       </div>
-      
-      </body>
       <footer>
       Creado por Leandro Veliz-2022
       </footer>

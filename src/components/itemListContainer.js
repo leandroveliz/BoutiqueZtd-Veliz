@@ -1,4 +1,3 @@
-import { computeStyles } from '@popperjs/core';
 import React,{useEffect,useState}from 'react';
 import ItemList from "./itemList";
 import { promesa } from '../mocks/api';
@@ -10,7 +9,8 @@ const ItemListContainer = () => {
 
     useEffect(()=>{
         setCargando(true)
-        promesa.then((resp)=> setListaProductos(resp))
+        promesa
+        .then((resp)=> setListaProductos(resp))
         .catch((error) => console.log(error))
         .finally(()=> setCargando(false))
     },[]);        

@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import { Card } from "react-bootstrap"
 
-const Item = ({nombre,precio, stock}) =>{
+const Item = ({nombre,precio, stock,imagen}) =>{
     const initial=1;
     const onAdd = (contador) => {
         console.log('Cantidad Agregada',contador)
@@ -32,7 +32,9 @@ const Item = ({nombre,precio, stock}) =>{
             <div>
 
                 <Card style={{ width: '16rem', margin: '12px' }}>
+                    
                     <Card.Body class="colorCard">
+                        
                         <Card.Title>{nombre}</Card.Title>
                         <Card.Text>
                             Precio: ${precio}
