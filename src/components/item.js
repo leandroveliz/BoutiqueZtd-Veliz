@@ -1,33 +1,9 @@
 import React, {useState} from "react";
 import { Card } from "react-bootstrap"
+import { Link } from "react-router-dom";
 
-const Item = ({nombre,precio, stock,imagen}) =>{
-    const initial=1;
-    const onAdd = (contador) => {
-        console.log('Cantidad Agregada',contador)
-    };
-    const [contador,setContador] = useState(initial);
-        
-        const clickSuma = () => {
-            if(contador === stock){
-                return;
-            }
-            
-                setContador(contador+1)
-            
-        };
-        
-        const clickResta = () => {
-            if(contador === initial){
-                return;
-            }
-            setContador(contador-1)
-            
-        };
-        const sumarAlCarrito= () =>{
-            onAdd(contador);
-        }
-        
+const Item = ({nombre,precio, stock,imagen,id,descripcion}) =>{
+    
     return(
             <div>
 
@@ -39,16 +15,8 @@ const Item = ({nombre,precio, stock,imagen}) =>{
                         <Card.Text>
                             Precio: ${precio}
                         </Card.Text>
-                        <div className="moverProducto">
-                        <button className="btn btn-light btn-sm" onClick={()=> clickResta()}>-</button>
-                        <h3>{contador}</h3>
-                        <button className="btn btn-light btn-sm" onClick={()=> clickSuma()}>+</button>
-                        </div>
                         <br />
-                        <button  className="btn btn-secondary" >Mas detalles</button>
-                        <br />
-                        <br />
-                        <button onClick={()=> sumarAlCarrito()} className="btn btn-primary">Agregar al Carrito</button>
+                        <Link to={`/detalle/${id}`}><button className="btn btn-secondary" >Mas detalles</button></Link>
                     </Card.Body>
                  </Card>
                 

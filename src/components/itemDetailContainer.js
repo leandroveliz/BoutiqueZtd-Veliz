@@ -1,23 +1,27 @@
 import React, { useEffect, useState } from "react";
-import { promesa } from "../mocks/api";
+import { useParams } from "react-router-dom";
+import { promesa } from "../mocks/productos";
 import ItemDetail from "./itemDetail";
 
 const ItemDetailContainer = () => {
     const[detalleProducto,setDetalleProducto]= useState({})
     const[cargando,setCargando] = useState (false)
+
+    const {itemId} = useParams();
+
      useEffect(()=>{
          setCargando(true)
          promesa
-        .then((resp)=> setDetalleProducto(resp.find((item)=> item.id === '1')))
+        .then((resp)=> setDetalleProducto(resp.find((item)=> item.id === itemId)))
         .catch((error) => console.log(error))
         .finally(()=> setCargando(false))
          
-     },[])
+     },[itemId])
      console.log(detalleProducto)
     return(
         <div>
 
-            {cargando  ? <p>Cargando...</p> : <ItemDetail detalleProducto={detalleProducto}/> }
+            {cargando  ? <p>Cargando...</p> : <ItemDetail {...detalleProducto}/> }
             
         </div>
     )

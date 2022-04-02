@@ -1,48 +1,37 @@
 import React from "react";
+import { Navbar, Container, Nav, NavDropdown} from "react-bootstrap"
+import { Link } from "react-router-dom";
 import CartWidget from  './cartWidget'
 import imagenLogo from '../imagen/logo.png'
 
-const Navbar = () =>{
+const Menu = () =>{
     return(
-      <nav class="navbar navbar-expand-lg colorHeader">
-        <div class="container-fluid">
-          <img src={imagenLogo} className="imagenLogo"></img>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active colorA" aria-current="page" href="#">Contactos</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Calzado
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="#">Ojotas</a></li>
-                  <li><a class="dropdown-item" href="#">Zapatillas</a></li>
-                  <li><a class="dropdown-item" href="#">Zapatos</a></li>
-                </ul>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Indumentaria
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="#">Remeras</a></li>
-                  <li><a class="dropdown-item" href="#">Ropa Interior</a></li>
-                  <li><a class="dropdown-item" href="#">Pantalones</a></li>
-                </ul>
-              </li>
-              <CartWidget />
-              
-            </ul>
-            
-          </div>
-        </div>
-      </nav>
+      <Navbar className="colorHeader" expand="lg">
+      <Container className="colorHeader">
+        <Navbar.Brand><Link to="/"><img src={imagenLogo} className="imagenLogo"></img></Link></Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
+            <Nav.Link><Link to="/contactos" className="menu">Contactos</Link></Nav.Link>
+            <NavDropdown title="Productos" id="basic-nav-dropdown">
+              <Link to="/categoria/ojotas" className="menu">Ojotas</Link>
+              <br />
+              <Link to="/categoria/pantalones" className="menu">Pantalones</Link>
+              <br />
+              <Link to="/categoria/remeras" className="menu">Remeras</Link>
+              <br />
+              <Link to="/categoria/ropaInterior"className="menu">Ropa Interior</Link>
+              <br />
+              <Link to="/categoria/zapatillas"className="menu">Zapatillas</Link>
+              <br />
+              <Link to="/categoria/zapatos"className="menu">Zapatos</Link>
+            </NavDropdown>
+            <Nav.Link><Link to="/categoria/carrito"><CartWidget /></Link></Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
     );
 }
 
-export default Navbar;
+export default Menu;

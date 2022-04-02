@@ -75,3 +75,8 @@ footer{
   width: 150px;
   height: 150px;
 }
+
+.menu{
+  text-decoration: none;
+  color:black;
+}

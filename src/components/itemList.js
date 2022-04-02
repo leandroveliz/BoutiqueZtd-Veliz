@@ -9,7 +9,9 @@ const ItemList = ({listaProductos}) =>{
             
         <div>  
         <div class="moverProducto"> 
-            { listaProductos.map((item => <Item nombre={item.nombre} precio={item.precio} id={item.id} imagen={item.imagen}descripcion={item.descripcion} stock={item.stock} key={item.id}/>))}
+            { listaProductos.map((item => <Item nombre={item.nombre} precio={item.precio} 
+            id={item.id} imagen={item.imagen}descripcion={item.descripcion} stock={item.stock} 
+            categoria={item.categoria}key={item.id}/>))}
         </div>
         </div>
     );
