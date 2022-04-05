@@ -1,5 +1,6 @@
-import React, {useState} from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
+import ItemCounter from "./itemCounter";
 
 
 const ItemDetail = ({id,nombre,precio,imagen,descripcion,categoria,stock}) =>{
@@ -11,48 +12,20 @@ const ItemDetail = ({id,nombre,precio,imagen,descripcion,categoria,stock}) =>{
     const volverAtras = () =>{
         navigacion(-1)
     }
-    const initial=1;
-    const onAdd = (contador) => {
-        console.log('Cantidad Agregada',contador)
-    };
-    const [contador,setContador] = useState(initial);
-        
-        const clickSuma = () => {
-            if(contador === stock){
-                return;
-            }
-            
-                setContador(contador+1)
-            
-        };
-        
-        const clickResta = () => {
-            if(contador === initial){
-                return;
-            }
-            setContador(contador-1)
-            
-        };
-        const sumarAlCarrito= () =>{
-            onAdd(contador);
-        }
-        
+    
+    
    
     return(
         <div>
-            <h4>{nombre}</h4>
-            <h6>Precio: <br />
-            {precio}</h6>
+            
+            <h3>{nombre}</h3>
+            <h5>Precio: <br />
+            ${precio}</h5>
             <p>{descripcion}</p>
             <small>Stock Disponible: {stock}</small><br /><br />
             <div className="moverProducto">
-                    <button className="btn btn-light btn-sm" onClick={()=> clickResta()}>-</button>
-                    <h3>{contador}</h3>
-                    <button className="btn btn-light btn-sm" onClick={()=> clickSuma()}>+</button>
+                    <ItemCounter max={stock} id={id} nombre={nombre} descripcion={descripcion} categoria={categoria} precio={precio}/>
             </div>
-            <br />
-            <button onClick={()=> sumarAlCarrito()} className="btn btn-primary">Agregar al Carrito</button>
-            <br /><br />
             <button className="btn btn-secondary" onClick={volverAtras}>Volver atras</button>
             <button className="btn btn-secondary" onClick={volverAlInicio}>Volver al Inicio</button>
         </div>

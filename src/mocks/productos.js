@@ -6,8 +6,7 @@ const productos = [
         precio:4000,
         categoria:'ojotas',
         stock:10,
-        
-        
+        imagen:"./ojotas-1.jpg",
     },
     {
         nombre:'Havaianas Dorada',
@@ -16,8 +15,7 @@ const productos = [
         precio:4000,
         categoria:'ojotas',
         stock:7,
-        
-        
+        imagen:"./ojotas-2.jpg",
     },
     {
         nombre:'Havaianas Rosa-Dorada',
@@ -26,6 +24,7 @@ const productos = [
         precio:4000,
         categoria:'ojotas',
         stock:13,
+        imagen:"./ojotas-3.jpg",
         
         
     },
@@ -36,7 +35,7 @@ const productos = [
         precio:6500,
         categoria:'ojotas',
         stock:11,
-        
+        imagen:"./ojotas-4.jpg",
         
     },
     {
@@ -46,7 +45,7 @@ const productos = [
         precio:6200,
         categoria:'ojotas',
         stock:9,
-        
+        imagen:"./ojotas-5.jpg",
         
     },
     {
@@ -56,6 +55,7 @@ const productos = [
         precio:6000,
         categoria:'ojotas',
         stock:9,
+        imagen:"./ojotas6-2.jpg",
         
         
     },
@@ -66,7 +66,7 @@ const productos = [
         precio:2800,
         categoria:'remeras',
         stock:5,
-        
+        imagen:"./remera-1-2.jpg",
         
     },
     {
@@ -76,7 +76,7 @@ const productos = [
         precio:2200,
         categoria:'remeras',
         stock:10,
-        
+        imagen:"./remera-2-2.jpg",    
         
     },
     {
@@ -86,7 +86,7 @@ const productos = [
         precio:2800,
         categoria:'remeras',
         stock:12,
-        
+        imagen:"./remera-3-1.jpg",
         
     },
     {
@@ -96,7 +96,7 @@ const productos = [
         precio:2200,
         categoria:'remeras',
         stock:18,
-        
+        imagen:"./remera-4-1.jpg",
         
     },
     {
@@ -106,7 +106,7 @@ const productos = [
         precio:2800,
         categoria:'remeras',
         stock:8,
-        
+        imagen:"./REMERA-5.jpg",
     },
     {
         nombre:'Body',
@@ -115,8 +115,55 @@ const productos = [
         precio:2200,
         categoria:'remeras',
         stock:6,
-       
-    }
+        imagen:"./remera-6.jpg",
+    },
+    {
+        nombre:'Conjunto Bella',
+        id:'300',
+        descripcion:'Conjunto de Ropa interior en color Blanco',
+        precio:2000,
+        categoria:'ropainterior',
+        stock:8,
+        imagen:"./ropainterior1.jpg",
+    },
+    {
+        nombre:'Conjunto Camelia',
+        id:'301',
+        descripcion:'Conjunto de Ropa interior sin taza color Beige',
+        precio:2000,
+        categoria:'ropainterior',
+        stock:5,
+        imagen:"./ropainterior2.jpg",
+    },
+    {
+        nombre:'Conjunto Renata',
+        id:'302',
+        descripcion:'Conjunto de Ropa interior sin taza color Negro',
+        precio:2200,
+        categoria:'ropainterior',
+        stock:7,
+        imagen:"./ropainterior3.jpg",
+        
+    },
+    {
+        nombre:'Conjunto Sofia',
+        id:'303',
+        descripcion:'Conjunto de Ropa interior color Negro con detalles en Gris',
+        precio:2100,
+        categoria:'ropainterior',
+        stock:12,
+        imagen:"./ropainterior4.jpg",
+        
+    },
+    {
+        nombre:'Conjunto Mora',
+        id:'304',
+        descripcion:'Conjunto de Ropa interior sin taza color Negro',
+        precio:2100,
+        categoria:'ropainterior',
+        stock:12,
+        imagen:"./ropainterior5.jpg",
+    },
 ];
 export const promesa = new Promise ((resolve,reject)=>{
     let condicion = true;

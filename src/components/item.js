@@ -1,14 +1,16 @@
-import React, {useState} from "react";
+import React from "react";
 import { Card } from "react-bootstrap"
 import { Link } from "react-router-dom";
 
-const Item = ({nombre,precio, stock,imagen,id,descripcion}) =>{
+const cargarImg = require.context("./../imagen", true);
+
+const Item = ({nombre,precio,imagen,id}) =>{
     
     return(
             <div>
 
-                <Card style={{ width: '16rem', margin: '12px' }}>
-                    
+                <Card style={{ borderRadius:'15px', margin: '12px' }}>
+                    <img width= "380px" height="290px" src={cargarImg(`${imagen}`)} alt="" style={{ borderRadius:'15px' }}/> 
                     <Card.Body class="colorCard">
                         
                         <Card.Title>{nombre}</Card.Title>

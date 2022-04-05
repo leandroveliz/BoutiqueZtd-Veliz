@@ -20,7 +20,7 @@ const Menu = () =>{
               <br />
               <Link to="/categoria/remeras" className="menu">Remeras</Link>
               <br />
-              <Link to="/categoria/ropaInterior"className="menu">Ropa Interior</Link>
+              <Link to="/categoria/ropainterior"className="menu">Ropa Interior</Link>
               <br />
               <Link to="/categoria/zapatillas"className="menu">Zapatillas</Link>
               <br />

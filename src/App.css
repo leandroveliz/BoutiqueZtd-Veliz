@@ -45,7 +45,8 @@ footer{
 }
 .tamanioCarrito{
   width: 50px;
-  height: 50px;  
+  height: 50px;
+   
 }
 
 .imagenLogo{
@@ -63,6 +64,7 @@ footer{
 
 .colorCard{
   background-color: burlywood;
+  border-radius: 15px;
 }
 
 .moverProducto{
