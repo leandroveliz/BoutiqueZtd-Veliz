@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import ItemCounter from "./itemCounter";
 
 
+
 const ItemDetail = ({id,nombre,precio,imagen,descripcion,categoria,stock}) =>{
     const navigacion = useNavigate();
 
@@ -12,8 +13,6 @@ const ItemDetail = ({id,nombre,precio,imagen,descripcion,categoria,stock}) =>{
     const volverAtras = () =>{
         navigacion(-1)
     }
-    
-    
    
     return(
         <div>
