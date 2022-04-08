@@ -1,10 +1,25 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
-import ItemCounter from "./itemCounter";
+import React, { useState,useContext } from "react";
+import { useNavigate, Link } from "react-router-dom";
+import { CartContext } from "./cartContext";
+import ItemCount from "./itemCount";
+import Select from "./select";
 
+const options =[
+    {value:'talle', text:'Talle'},
+    {value:'xs', text:'XS'},
+    {value:'s', text:'S'},
+    {value:'m', text:'M'},
+    {value:'l', text:'L'},
+    {value:'xl', text:'XL'},
+    
+]
 
 
 const ItemDetail = ({id,nombre,precio,imagen,descripcion,categoria,stock}) =>{
+
+    const {addItem, isInCart} = useContext(CartContext)
+    console.log(isInCart(id))
+    
     const navigacion = useNavigate();
 
     const volverAlInicio = () =>{
@@ -12,6 +27,18 @@ const ItemDetail = ({id,nombre,precio,imagen,descripcion,categoria,stock}) =>{
     }
     const volverAtras = () =>{
         navigacion(-1)
+    }
+    const [cantidad,setCantidad] = useState(1);
+    const [talle,setTalleRopa]  =  useState('Talle')
+    
+    const onAdd = (cantidad) => {
+        const productoAMostrar = {
+            id,nombre,precio,descripcion,categoria,cantidad
+        }
+        addItem(productoAMostrar)
+    };
+    const sumarAlCarrito= () =>{
+        onAdd(cantidad);
     }
    
     return(
@@ -22,11 +49,16 @@ const ItemDetail = ({id,nombre,precio,imagen,descripcion,categoria,stock}) =>{
             ${precio}</h5>
             <p>{descripcion}</p>
             <small>Stock Disponible: {stock}</small><br /><br />
-            <div className="moverProducto">
-                    <ItemCounter max={stock} id={id} nombre={nombre} descripcion={descripcion} categoria={categoria} precio={precio}/>
-            </div>
+            <Select options={options} onSelect={setTalleRopa}></Select><br /><br />
+            {
+                !isInCart(id) ?
+                <ItemCount max={stock} cantidad={cantidad} setCantidad={setCantidad} onAdd={sumarAlCarrito}/> :
+                <Link to="/categoria/carrito" className="btn btn-success">Procesar Compra</Link>
+            }
+            <br /><br />   
             <button className="btn btn-secondary" onClick={volverAtras}>Volver atras</button>
             <button className="btn btn-secondary" onClick={volverAlInicio}>Volver al Inicio</button>
+            
         </div>
     )
 }

@@ -12,12 +12,12 @@ const ItemDetailContainer = () => {
      useEffect(()=>{
          setCargando(true)
          promesa
-        .then((resp)=> setDetalleProducto(resp.find((item)=> item.id === itemId)))
+        .then((resp)=> setDetalleProducto(resp.find((item)=> item.id === Number(itemId))))
         .catch((error) => console.log(error))
         .finally(()=> setCargando(false))
          
      },[itemId])
-     console.log(detalleProducto)
+    
     return(
         <div>
 

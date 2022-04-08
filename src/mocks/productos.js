@@ -1,7 +1,7 @@
 const productos = [
     {
         nombre:'Havaianas Azul',
-        id:'100',
+        id:100,
         descripcion:'Ojotas Havaianas Lisa Azules',
         precio:4000,
         categoria:'ojotas',
@@ -10,7 +10,7 @@ const productos = [
     },
     {
         nombre:'Havaianas Dorada',
-        id:'101',
+        id:101,
         descripcion:'Ojotas Havaianas Lisa Doradas',
         precio:4000,
         categoria:'ojotas',
@@ -19,7 +19,7 @@ const productos = [
     },
     {
         nombre:'Havaianas Rosa-Dorada',
-        id:'103',
+        id:103,
         descripcion:'Ojotas Havaianas Lisa Rosas con Detalles en Dorado',
         precio:4000,
         categoria:'ojotas',
@@ -30,7 +30,7 @@ const productos = [
     },
     {
         nombre:'Puma Rosa-Blanca',
-        id:'104',
+        id:104,
         descripcion:'Ojotas Puma Lisa Rosas con Detalles en Blanco',
         precio:6500,
         categoria:'ojotas',
@@ -40,7 +40,7 @@ const productos = [
     },
     {
         nombre:'Adidas Aqua',
-        id:'105',
+        id:105,
         descripcion:'Ojotas Adidas color Aqua con Detalles en Blanco',
         precio:6200,
         categoria:'ojotas',
@@ -50,7 +50,7 @@ const productos = [
     },
     {
         nombre:'Nike',
-        id:'106',
+        id:106,
         descripcion:'Ojotas Nike color Negro con Detalles en floreados',
         precio:6000,
         categoria:'ojotas',
@@ -61,7 +61,7 @@ const productos = [
     },
     {
         nombre:'Remera Algodon',
-        id:'200',
+        id:200,
         descripcion:'Remera de algodon estampada',
         precio:2800,
         categoria:'remeras',
@@ -71,7 +71,7 @@ const productos = [
     },
     {
         nombre:'Musculosa Estampada',
-        id:'201',
+        id:201,
         descripcion:'Musculosa de algodon estampada',
         precio:2200,
         categoria:'remeras',
@@ -81,7 +81,7 @@ const productos = [
     },
     {
         nombre:'Remera Algodon',
-        id:'202',
+        id:202,
         descripcion:'Top con bordados y lentejuelas',
         precio:2800,
         categoria:'remeras',
@@ -91,7 +91,7 @@ const productos = [
     },
     {
         nombre:'Remeras Top',
-        id:'203',
+        id:203,
         descripcion:'remeras top con hombro descubiertos',
         precio:2200,
         categoria:'remeras',
@@ -101,7 +101,7 @@ const productos = [
     },
     {
         nombre:'Blusa',
-        id:'204',
+        id:204,
         descripcion:'Blusa tejida en color blanco',
         precio:2800,
         categoria:'remeras',
@@ -110,7 +110,7 @@ const productos = [
     },
     {
         nombre:'Body',
-        id:'205',
+        id:205,
         descripcion:'Body Minnie de encaje',
         precio:2200,
         categoria:'remeras',
@@ -119,7 +119,7 @@ const productos = [
     },
     {
         nombre:'Conjunto Bella',
-        id:'300',
+        id:300,
         descripcion:'Conjunto de Ropa interior en color Blanco',
         precio:2000,
         categoria:'ropainterior',
@@ -128,7 +128,7 @@ const productos = [
     },
     {
         nombre:'Conjunto Camelia',
-        id:'301',
+        id:301,
         descripcion:'Conjunto de Ropa interior sin taza color Beige',
         precio:2000,
         categoria:'ropainterior',
@@ -137,7 +137,7 @@ const productos = [
     },
     {
         nombre:'Conjunto Renata',
-        id:'302',
+        id:302,
         descripcion:'Conjunto de Ropa interior sin taza color Negro',
         precio:2200,
         categoria:'ropainterior',
@@ -147,7 +147,7 @@ const productos = [
     },
     {
         nombre:'Conjunto Sofia',
-        id:'303',
+        id:303,
         descripcion:'Conjunto de Ropa interior color Negro con detalles en Gris',
         precio:2100,
         categoria:'ropainterior',
@@ -157,7 +157,7 @@ const productos = [
     },
     {
         nombre:'Conjunto Mora',
-        id:'304',
+        id:304,
         descripcion:'Conjunto de Ropa interior sin taza color Negro',
         precio:2100,
         categoria:'ropainterior',
@@ -166,7 +166,7 @@ const productos = [
     },
     {
         nombre:'Gabardina',
-        id:'400',
+        id:400,
         descripcion:'Pantalon de Gabardina color Azul oscuro',
         precio:4000,
         categoria:'pantalones',
@@ -175,7 +175,7 @@ const productos = [
     },
     {
         nombre:'Jogger Eslastizado',
-        id:'401',
+        id:401,
         descripcion:'Pantalon Jogeer Eslatizado color Bordo',
         precio:4200,
         categoria:'pantalones',
@@ -184,7 +184,7 @@ const productos = [
     },
     {
         nombre:'Creppe Eslastizado',
-        id:'402',
+        id:402,
         descripcion:'Pantalon Eslatizado color Rojo',
         precio:4300,
         categoria:'pantalones',
@@ -193,7 +193,7 @@ const productos = [
     },
     {
         nombre:'Jogger',
-        id:'403',
+        id:403,
         descripcion:'Pantalon Jogger Corte diversos colores',
         precio:4100,
         categoria:'pantalones',
@@ -202,7 +202,7 @@ const productos = [
     },
     {
         nombre:'Vizzano',
-        id:'500',
+        id:500,
         descripcion:'Zapato Vizzano color Nude',
         precio:10000,
         categoria:'zapatos',
@@ -211,7 +211,7 @@ const productos = [
     },
     {
         nombre:'Vizzano',
-        id:'501',
+        id:501,
         descripcion:'Zandalia Vizzano color Negro',
         precio:11000,
         categoria:'zapatos',
@@ -220,16 +220,16 @@ const productos = [
     },
     {
         nombre:'Clara',
-        id:'502',
+        id:502,
         descripcion:'Zandalia Clara Cuero color Rojo',
         precio:10500,
         categoria:'zapatos',
         stock:11,
-        imagen:"./zapatos2-1.jpg",
+        imagen:"./zapatos3-1.jpg",
     },
     {
         nombre:'Valkiria',
-        id:'503',
+        id:503,
         descripcion:'Zandalia Valkiria Vegan Blanco',
         precio:9500,
         categoria:'zapatos',
@@ -238,7 +238,7 @@ const productos = [
     },
     {
         nombre:'Lilian',
-        id:'504',
+        id:504,
         descripcion:'Zandalia Gamuza Lilian Negro',
         precio:9800,
         categoria:'zapatos',
@@ -247,7 +247,7 @@ const productos = [
     },
     {
         nombre:'Blanca-Rosa',
-        id:'600',
+        id:600,
         descripcion:'Zapatillas Cuero Blanca detalles en Rosa',
         precio:7200,
         categoria:'zapatillas',
@@ -256,7 +256,7 @@ const productos = [
     },
     {
         nombre:'Blanca-Negra-Dorada',
-        id:'601',
+        id:601,
         descripcion:'Zapatillas Cuero Blanca detalles en Negro y Dorado',
         precio:750000,
         categoria:'zapatillas',
@@ -265,7 +265,7 @@ const productos = [
     },
     {
         nombre:'Vizzano',
-        id:'602',
+        id:602,
         descripcion:'Zapatillas Vizano Cuero Blanca detalles en Beige-Celeste',
         precio:7600,
         categoria:'zapatillas',
@@ -274,7 +274,7 @@ const productos = [
     },
     {
         nombre:'Vizzano',
-        id:'603',
+        id:603,
         descripcion:'Zapatillas Vizano Cuero color Beige',
         precio:7600,
         categoria:'zapatillas',

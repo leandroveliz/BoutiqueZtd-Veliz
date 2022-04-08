@@ -1,11 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import carrito from '../carrito1.svg'
 import '../App.css'
+import { CartContext } from "./cartContext";
 
-const CartWidget = ({}) =>{
+const CartWidget = () =>{
+    const {cantidadProductosAgregados}= useContext(CartContext)
     return(
-    <img src={carrito} className="tamanioCarrito" alt="carrito"/>
+    <div>
+    <img src={carrito} className="tamanioCarrito" alt="carrito"></img>
+    <span className="numCarrito">({cantidadProductosAgregados()})</span>
+    </div>
     );
+    
 }
   
 export default CartWidget;
