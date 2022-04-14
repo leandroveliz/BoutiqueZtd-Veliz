@@ -9,8 +9,7 @@ const Item = ({nombre,precio,imagen,id}) =>{
     return(
             <div>
 
-                <Card style={{ borderRadius:'15px', margin: '12px' }}>
-                    <img width= "380px" height="290px" src={cargarImg(`${imagen}`)} alt="" style={{ borderRadius:'15px' }}/> 
+                <Card style={{ borderRadius:'15px', margin: '12px'}}>
                     <Card.Body class="colorCard">
                         
                         <Card.Title>{nombre}</Card.Title>

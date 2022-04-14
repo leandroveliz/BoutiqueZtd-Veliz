@@ -1,21 +1,26 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { promesa } from "../mocks/productos";
+import { baseDeDatos } from "./config";
+import  {doc,getDoc}  from 'firebase/firestore'
 import ItemDetail from "./itemDetail";
 
 const ItemDetailContainer = () => {
-    const[detalleProducto,setDetalleProducto]= useState({})
+    const[detalleProducto,setDetalleProducto]= useState(null)
     const[cargando,setCargando] = useState (false)
 
     const {itemId} = useParams();
 
      useEffect(()=>{
-         setCargando(true)
-         promesa
-        .then((resp)=> setDetalleProducto(resp.find((item)=> item.id === Number(itemId))))
-        .catch((error) => console.log(error))
-        .finally(()=> setCargando(false))
-         
+        setCargando(true)
+
+        const referenciaItem = doc(baseDeDatos,"productos",itemId);
+        getDoc(referenciaItem)
+                .then(doc => {
+                    setDetalleProducto({ id:doc.id , ...doc.data()})
+                })
+                .finally(  ()=>
+                setCargando(false)
+                )
      },[itemId])
     
     return(

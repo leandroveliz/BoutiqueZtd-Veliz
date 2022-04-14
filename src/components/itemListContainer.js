@@ -1,8 +1,8 @@
 import React,{useEffect,useState}from 'react';
 import ItemList from "./itemList";
-import { promesa } from '../mocks/productos';
 import { useParams } from 'react-router-dom';
-
+import { collection, getDocs, query, where } from 'firebase/firestore';
+import { baseDeDatos } from './config';
 
 const ItemListContainer = () => {
     const [listaProductos,setListaProductos] = useState([]);
@@ -13,16 +13,20 @@ const ItemListContainer = () => {
 
     useEffect(()=>{
         setCargando(true)
-        promesa
-        .then(  ( resp ) => {
-            if( categoriaId ) {
-                setListaProductos( resp.filter( (prod)=> prod.categoria === categoriaId ))
-            }else{
-                setListaProductos(resp)
-            }
-        })
-        .catch((error) => console.log(error))
-        .finally(()=> setCargando(false))
+        
+        const referenciaProductos = collection(baseDeDatos,"productos");
+        const queryy = categoriaId ? query(referenciaProductos,where('categoria','==',categoriaId)) : referenciaProductos
+
+        getDocs(queryy)
+                .then(resp => {
+                    const items = resp.docs.map((doc) => ({id: doc.id,...doc.data()}))
+                    console.log(items)
+                    setListaProductos(items)
+                })
+                .finally(()=>{
+                    setCargando(false)
+                })
+
     },[categoriaId]);        
         return(
             <div>
