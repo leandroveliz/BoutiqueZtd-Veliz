@@ -28,14 +28,14 @@ const ItemDetail = ({id,nombre,precio,imagen,descripcion,categoria,stock}) =>{
     const volverAtras = () =>{
         navigacion(-1)
     }
-    const [cantidad,setCantidad] = useState(1);
+    const [cantidad,setCantidad] = useState(0);
     const [talle,setTalleRopa]  =  useState('Talle')
     
     const onAdd = (cantidad) => {
         const productoAMostrar = {
             id,nombre,precio,descripcion,categoria,cantidad
         }
-        addItem(productoAMostrar)
+        cantidad > 0 && addItem(productoAMostrar)
     };
     const sumarAlCarrito= () =>{
         onAdd(cantidad);
@@ -49,12 +49,19 @@ const ItemDetail = ({id,nombre,precio,imagen,descripcion,categoria,stock}) =>{
             ${precio}</h5>
             <p>{descripcion}</p>
             <small>Stock Disponible: {stock}</small><br /><br />
-            <Select options={options} onSelect={setTalleRopa}></Select><br /><br />
-            {
+            
+            { stock  === 0 && <p style={{color:'orange', fontWeight:'800'}}>¡Producto sin Stock!</p>}
+           
+            <>
+                <Select options={options} onSelect={setTalleRopa}></Select><br /><br />
+                {
                 !isInCart(id) ?
                 <ItemCount max={stock} cantidad={cantidad} setCantidad={setCantidad} onAdd={sumarAlCarrito}/> :
                 <Link to="/categoria/carrito" className="btn btn-success">Procesar Compra</Link>
-            }
+                }
+            </>
+            
+            
             <br /><br />   
             <button className="btn btn-secondary" onClick={volverAtras}>Volver atras</button>
             <button className="btn btn-secondary" onClick={volverAlInicio}>Volver al Inicio</button>

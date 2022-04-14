@@ -8,18 +8,30 @@ const ItemCounter = ({max, cantidad, setCantidad,onAdd}) =>{
     };
         
     const clickResta = () => {
-        cantidad > 1 && setCantidad(cantidad-1)
+        cantidad > 0 && setCantidad(cantidad-1)
     };
 
     
         
     return(
         <div>
-        <button className="btn btn-outline-primary" onClick={()=> clickResta()}>-</button>
+        <button className={
+            cantidad > 0 ? 
+            "btn btn-outline-primary" : 
+            "btn btn-outline-secondary"} 
+            onClick={()=> clickResta()}
+            disabled={cantidad === 0}>-</button>
         <span>{cantidad}</span>
-        <button className="btn btn-primary" onClick={()=> clickSuma()}>+</button>
+        <button className={
+            cantidad < max ? 
+            "btn btn-primary" : "btn btn-secondary"} 
+            onClick={()=> clickSuma()}
+            disabled={cantidad === max}>+</button>
+
         <br /><br />
-        <button onClick={onAdd} className="btn btn-success">Agregar al Carrito</button>
+        <button onClick={onAdd} 
+        className="btn btn-success"
+        disabled={cantidad === 0}>Agregar al Carrito</button>
         <br /><br />
         
         </div>
