@@ -8,7 +8,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Contactos from './contacto/contactos';
 import Carrito from './components/carrito';
 import { CartProvider } from './components/cartContext';
-
+import TerminarCompra from './components/terminarCompra';
 
 function App() {
 
@@ -27,6 +27,7 @@ function App() {
           <Route path="/detalle/:itemId" element={<ItemDetailContainer />}/>
           <Route path="/contactos" element={<Contactos />}/>
           <Route path="/categoria/carrito" element={<Carrito />}/>
+          <Route path="/terminarCompra" element={<TerminarCompra />}/>
           <Route path='*' element={<Navigate to='/'/>}/>
       </Routes>
       

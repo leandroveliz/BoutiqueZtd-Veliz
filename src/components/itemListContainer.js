@@ -9,7 +9,7 @@ const ItemListContainer = () => {
     const [cargando,setCargando] = useState(false);
 
     const {categoriaId} = useParams();
-    console.log(categoriaId);
+   
 
     useEffect(()=>{
         setCargando(true)
@@ -20,7 +20,7 @@ const ItemListContainer = () => {
         getDocs(queryy)
                 .then(resp => {
                     const items = resp.docs.map((doc) => ({id: doc.id,...doc.data()}))
-                    console.log(items)
+                    
                     setListaProductos(items)
                 })
                 .finally(()=>{

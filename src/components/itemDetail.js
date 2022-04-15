@@ -1,26 +1,26 @@
-import React, { useState,useContext } from "react";
+
+import React, { useState,useContext} from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { CartContext } from "./cartContext";
 import ItemCount from "./itemCount";
-import Select from "./select";
+//import Select from "./select";
 
-const options =[
-    {value:'talle', text:'Talle'},
+/*const optionsRem =[
+    {value:'talle',text:'Talle'},
     {value:'xs', text:'XS'},
     {value:'s', text:'S'},
     {value:'m', text:'M'},
     {value:'l', text:'L'},
     {value:'xl', text:'XL'},
-    
-]
+    <Select options={optionsRem} onSelect={setTalleRem}></Select><br /><br />
+]*/
 
 
 const ItemDetail = ({id,nombre,precio,imagen,descripcion,categoria,stock}) =>{
 
     const {addItem, isInCart} = useContext(CartContext)
-    console.log(isInCart(id))
-    
     const navigacion = useNavigate();
+
 
     const volverAlInicio = () =>{
         navigacion("/")
@@ -29,7 +29,7 @@ const ItemDetail = ({id,nombre,precio,imagen,descripcion,categoria,stock}) =>{
         navigacion(-1)
     }
     const [cantidad,setCantidad] = useState(0);
-    const [talle,setTalleRopa]  =  useState('Talle')
+    //const [talle,setTalleRem]  =  useState('Talle')
     
     const onAdd = (cantidad) => {
         const productoAMostrar = {
@@ -40,7 +40,7 @@ const ItemDetail = ({id,nombre,precio,imagen,descripcion,categoria,stock}) =>{
     const sumarAlCarrito= () =>{
         onAdd(cantidad);
     }
-   
+
     return(
         <div>
             
@@ -53,7 +53,7 @@ const ItemDetail = ({id,nombre,precio,imagen,descripcion,categoria,stock}) =>{
             { stock  === 0 && <p style={{color:'orange', fontWeight:'800'}}>¡Producto sin Stock!</p>}
            
             <>
-                <Select options={options} onSelect={setTalleRopa}></Select><br /><br />
+            
                 {
                 !isInCart(id) ?
                 <ItemCount max={stock} cantidad={cantidad} setCantidad={setCantidad} onAdd={sumarAlCarrito}/> :
