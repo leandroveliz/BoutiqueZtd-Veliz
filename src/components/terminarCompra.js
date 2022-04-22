@@ -57,7 +57,7 @@ const TerminarCompra = () => {
             .then((doc) => {
                 setOrdenId(doc.id)
                 vaciarCart()
-                console.log(doc.tamanio)
+                
             })
     } 
 

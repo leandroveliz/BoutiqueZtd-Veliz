@@ -1,27 +1,44 @@
 
-import React, { useState,useContext} from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { doc,getDoc } from "firebase/firestore";
+import React, { useState,useContext, useEffect} from "react";
+import { useNavigate, Link, useParams } from "react-router-dom";
 import { CartContext } from "./cartContext";
+import { baseDeDatos } from "./config";
 import ItemCount from "./itemCount";
-//import Select from "./select";
+import Select from "./select";
 
-/*const optionsRem =[
+
+const optionsRem =[
     {value:'talle',text:'Talle'},
     {value:'xs', text:'XS'},
     {value:'s', text:'S'},
     {value:'m', text:'M'},
     {value:'l', text:'L'},
     {value:'xl', text:'XL'},
-    <Select options={optionsRem} onSelect={setTalleRem}></Select><br /><br />
-]*/
+    
+    
+]
 
 
-const ItemDetail = ({id,nombre,precio,imagen,descripcion,categoria,stock}) =>{
+
+
+const ItemDetail = ({id,nombre,precio,descripcion,categoria,stock}) =>{
 
     const {addItem, isInCart} = useContext(CartContext)
     const navigacion = useNavigate();
 
+    //const [tamanio,setTamanio] = useState('')
+    const {itemId} = useParams()
+    const [imagen,setImagen] = useState('')
+    /*useEffect(()=>{
+        const referenciaImagen = doc(baseDeDatos,"productos",itemId)
 
+        getDoc(referenciaImagen)
+            .then(doc=>{
+               
+                setImagen({imagen:doc.imagen,...doc.data()})
+            })
+    })*/
     const volverAlInicio = () =>{
         navigacion("/")
     }
@@ -29,7 +46,7 @@ const ItemDetail = ({id,nombre,precio,imagen,descripcion,categoria,stock}) =>{
         navigacion(-1)
     }
     const [cantidad,setCantidad] = useState(0);
-    //const [talle,setTalleRem]  =  useState('Talle')
+    const [talle,setTalleRem]  =  useState('Talle')
     
     const onAdd = (cantidad) => {
         const productoAMostrar = {
@@ -43,7 +60,7 @@ const ItemDetail = ({id,nombre,precio,imagen,descripcion,categoria,stock}) =>{
 
     return(
         <div>
-            
+            <img src={`${imagen}`}/>
             <h3>{nombre}</h3>
             <h5>Precio: <br />
             ${precio}</h5>
@@ -51,9 +68,9 @@ const ItemDetail = ({id,nombre,precio,imagen,descripcion,categoria,stock}) =>{
             <small>Stock Disponible: {stock}</small><br /><br />
             
             { stock  === 0 && <p style={{color:'orange', fontWeight:'800'}}>¡Producto sin Stock!</p>}
-           
-            <>
             
+            <>
+            <Select options={optionsRem} onSelect={setTalleRem}></Select><br /><br />
                 {
                 !isInCart(id) ?
                 <ItemCount max={stock} cantidad={cantidad} setCantidad={setCantidad} onAdd={sumarAlCarrito}/> :
