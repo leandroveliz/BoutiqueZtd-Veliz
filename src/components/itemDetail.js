@@ -46,6 +46,7 @@ const ItemDetail = ({id,nombre,precio,descripcion,categoria,stock}) =>{
         navigacion(-1)
     }
     const [cantidad,setCantidad] = useState(0);
+    
     const [talle,setTalleRem]  =  useState('Talle')
     
     const onAdd = (cantidad) => {
@@ -60,7 +61,7 @@ const ItemDetail = ({id,nombre,precio,descripcion,categoria,stock}) =>{
 
     return(
         <div>
-            <img src={`${imagen}`}/>
+            <img src={imagen}></img>
             <h3>{nombre}</h3>
             <h5>Precio: <br />
             ${precio}</h5>

@@ -2,7 +2,7 @@ import React from "react";
 import { Card } from "react-bootstrap"
 import { Link } from "react-router-dom";
 
-const cargarImg = require.context("./../imagen", true);
+
 
 const Item = ({nombre,precio,imagen,id}) =>{
     
@@ -11,7 +11,7 @@ const Item = ({nombre,precio,imagen,id}) =>{
 
                 <Card style={{ borderRadius:'15px', margin: '12px'}}>
                     <Card.Body class="colorCard">
-                        
+                        <Card.Img src={imagen}/>
                         <Card.Title>{nombre}</Card.Title>
                         <Card.Text>
                             Precio: ${precio}
