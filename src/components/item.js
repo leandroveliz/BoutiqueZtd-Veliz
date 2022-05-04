@@ -1,27 +1,28 @@
 import React from "react";
-import { Card } from "react-bootstrap"
+import { Card} from "react-bootstrap"
 import { Link } from "react-router-dom";
+import ImagenCar from "./carousel";
 
-
-
-const Item = ({nombre,precio,imagen,id}) =>{
-    
+const Item = ({nombre,precio,imagen1,imagen2,id}) =>{
+         
     return(
             <div>
-
-                <Card style={{ borderRadius:'15px', margin: '12px'}}>
+                <div>
+                <Card style={{ width:'350px',height:'430px',borderRadius:'15px', margin: '35px'}}>
+                <ImagenCar imagen1={imagen1} imagen2={imagen2}/>
                     <Card.Body class="colorCard">
-                        <Card.Img src={imagen}/>
-                        <Card.Title>{nombre}</Card.Title>
+                        <Card.Title className="colorNombre">{nombre}</Card.Title>
                         <Card.Text>
-                            Precio: ${precio}
+                           ${precio}<br />
                         </Card.Text>
                         <br />
                         <Link to={`/detalle/${id}`}><button className="btn btn-secondary" >Mas detalles</button></Link>
                     </Card.Body>
                  </Card>
-                
+                 </div>
+                 <br /><br />
             </div>
+            
         
     );
 

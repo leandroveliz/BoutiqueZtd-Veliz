@@ -8,8 +8,7 @@ const ItemList = ({listaProductos}) =>{
             
         <div>  
         <div class="moverProducto"> 
-            { listaProductos.map((item => <Item 
-             imagen={item.imagen} key={item.id} {...item}/>))}
+            { listaProductos.map((item => <Item key={item.id} {...item}/>))}
         </div>
         </div>
     );

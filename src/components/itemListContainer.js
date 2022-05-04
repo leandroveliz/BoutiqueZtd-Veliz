@@ -30,9 +30,12 @@ const ItemListContainer = () => {
     },[categoriaId]);        
         return(
             <div>
-                {cargando  ? <p>Cargando...</p> : ''}
+                {cargando  ? <div className="tamanioIcono">
+                                <div className="iconoCargando">
+                                    <div className="iconoCargando iconoCargando-a">
+                                        </div></div></div> : ''}
                 <ItemList listaProductos={listaProductos}/>
-                
+                <br />
             </div>
             
         );

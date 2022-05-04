@@ -5,7 +5,7 @@ const Select = ({options = [],onSelect}) =>{
     }
 
     return (
-        <select onChange = {handelSelect}>
+        <select onChange = {handelSelect} className="select">
             {options.map((elemento)=> <option value = {elemento.value}>{elemento.text}</option>)}
         </select>
     )

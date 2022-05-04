@@ -1,6 +1,5 @@
 import React  from 'react';
 import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import Menu from './components/navbar';
 import ItemListContainer from './components/itemListContainer'
 import ItemDetailContainer from './components/itemDetailContainer'
@@ -10,6 +9,7 @@ import Carrito from './components/carrito';
 import { CartProvider } from './components/cartContext';
 import TerminarCompra from './components/terminarCompra';
 
+
 function App() {
 
   
@@ -17,7 +17,7 @@ function App() {
     <div className="App">
       <CartProvider>
       <BrowserRouter>
-      <header >
+      <header className='colorHeader menuFijo'>
         <Menu />
       </header>
       <div>

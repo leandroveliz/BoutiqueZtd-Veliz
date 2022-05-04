@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color: rgb(228, 203, 171);
 }
 
 .App-logo {
@@ -7,11 +8,6 @@
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
 .App-header {
   background-color: #282c34;
@@ -24,34 +20,51 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 
 footer{
-  background-color: rgb(245, 222, 192);
+  grid-area: pie;
+  text-align: right;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: burlywood;
 }
+
 .colorA{
-  color: black;
+  color: white;
+}
+
+.colorNombre{
+color: white;
 }
 .tamanioCarrito{
-  width: 50px;
-  height: 50px;
+  width: 25px;
+  height: 25px;
    
 }
 
+.cart {
+  cursor:pointer;
+  }
+.cart span:nth-child(1){
+  font-size: 2rem;
+  color:white
+}
+
+.cart span:nth-child(2){
+  padding: 0 3px;
+  background-color:grey;
+  color: white;
+  font-weight:bolx;
+  border-radius: 5px;
+  position: relative;
+  top: -15px;
+}
+
 .imagenLogo{
-  width: 100px;
-  height: 80px; 
+  width: 150px;
+  height: 130px; 
 }
 
 .color-body{
@@ -59,8 +72,9 @@ footer{
 }
 
 .colorHeader{
-  background-color: rgb(228, 203, 171);
+  background-color: burlywood;
 }
+
 
 .colorCard{
   background-color: burlywood;
@@ -74,16 +88,94 @@ footer{
 }
 
 .tamanioImagen{
-  width: 150px;
-  height: 150px;
+  width: 350px;
+  height: 350px;
+}
+.tamanioImagen2{
+  width: 600px;
+  height: 600px;
+}
+
+.itemDetail{
+  margin-right: 30px;
 }
 
 .menu{
   text-decoration: none;
   color:black;
 }
-
+.colorProd{
+  background-color: white;
+  width: 500px;
+  max-height: max-content;
+  
+}
 .numCarrito{
-  text-decoration: none;
-  color:grey;
+  text-decoration:none;
+  color:black;
+}
+
+.tamanioIcono{
+  width: 200px;
+  height: 200px;
+  justify-content: center;
+}
+.iconoCargando{
+  
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  border: 10px solid grey; 
+  border-top-color: greenyellow;
+  border-bottom-color: rgb(229, 75, 168);
+  border-radius: 50%;
+  animation: rotate 20s linear infinite;
+}
+
+.iconoCargando-a{
+  border-top-color: white ;
+  border-bottom-color: rgb(165, 158, 69);
+  animation-duration: 2.5s;
+  margin: 0 auto;
+}
+
+@keyframes rotate{
+  0%{
+    transform: scale(1) rotate(360deg);
+  }
+  50%{
+    transform: scale(.8) rotate(-360deg);
+  }
+  100%{
+    transform: scale(1) rotate(360deg);
+  }
+}
+
+.form{
+  width:50%;
+  margin: 0 auto;
+}
+
+.select {
+  appearance: none;
+  padding: 10px 15px;
+  -webkit-border-radius: 70px;
+  -moz-border-radius:70px;
+  border-radius: 70px;
+  border: 1px solid burlywood;
+  background-color: burlywood;
+  color: #ffffff;
+  font-size: 22px;
+}
+
+.select:focus {
+  outline: none;
+}
+
+.zoom {
+  transition: transform .2s; 
+}
+
+.zoom:hover {
+  transform: scale(1.5); 
 }

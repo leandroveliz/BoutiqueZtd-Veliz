@@ -1,9 +1,10 @@
+/* */
 
-
-const ItemCounter = ({max, cantidad, setCantidad,onAdd}) =>{
+const ItemCounter = ({max, cantidad, setCantidad,agregarItemAlCarrito,cantidadAcumulada,setCantidadAcumulada}) =>{
     
     const clickSuma = () => {
-        cantidad < max && setCantidad(cantidad+1)
+        cantidad < max && setCantidad(cantidad+1);
+        cantidadAcumulada < max && setCantidadAcumulada(cantidad+cantidadAcumulada);
             
     };
         
@@ -27,12 +28,12 @@ const ItemCounter = ({max, cantidad, setCantidad,onAdd}) =>{
             "btn btn-primary" : "btn btn-secondary"} 
             onClick={()=> clickSuma()}
             disabled={cantidad === max}>+</button>
-
         <br /><br />
-        <button onClick={onAdd} 
+        <button onClick={agregarItemAlCarrito} 
         className="btn btn-success"
         disabled={cantidad === 0}>Agregar al Carrito</button>
         <br /><br />
+        
         
         </div>
         

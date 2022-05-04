@@ -14,7 +14,8 @@ const TerminarCompra = () => {
     const [values,setValues]= useState({
         nombre:'',
         email:'',
-        telefono:''
+        telefono:'',
+        direccion:''
     });
     
     const handleInputChange = (e)=>{
@@ -78,7 +79,7 @@ const TerminarCompra = () => {
     <div>
         <h2>Mi compra</h2>
         <hr />
-        <form onSubmit={handleSumit}>
+        <form onSubmit={handleSumit} className="form">
             <input className="form-control my-2" type={"text"} 
             placeholder="Nombre" value={values.nombre}
             name='nombre' onChange={handleInputChange}/>
@@ -88,6 +89,9 @@ const TerminarCompra = () => {
             <input className="form-control my-2" type={"tel"}
             placeholder="Telefono" value={values.telefono}
             name='telefono' onChange={handleInputChange}/>
+            <input className="form-control my-2" type={"tel"}
+            placeholder="Direccion" value={values.direccion}
+            name='direccion' onChange={handleInputChange}/>
             <button className="btn btn-primary" type="submit">Enviar</button>
         </form>
     </div>

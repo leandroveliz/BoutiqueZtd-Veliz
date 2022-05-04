@@ -22,6 +22,11 @@ export const CartProvider  =  ({children})  =>{
     const totalCart = ( ) =>{
         return cart.reduce((acc, prod) => acc += prod.precio *  prod.cantidad,0)
     }
+    
+    
+    
+    const tresCuotas = parseFloat(totalCart() / 3).toFixed(2);
+    
 
     const vaciarCart = () =>{
         setCart([])
@@ -39,7 +44,8 @@ export const CartProvider  =  ({children})  =>{
             cantidadProductosAgregados,
             totalCart,
             vaciarCart,
-            eliminarProd
+            eliminarProd,
+            tresCuotas
             }}>
 
             {children}
